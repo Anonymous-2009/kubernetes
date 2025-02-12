@@ -1,0 +1,11 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: testing-client-svc
+  namespace: testing
+spec:
+  selector:
+    app: testing-client
+  ports:
+  - port: 4173
+    targetPort: 4173

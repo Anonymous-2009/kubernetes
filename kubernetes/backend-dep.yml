@@ -1,0 +1,27 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name:  testing-server-dep
+  namespace: testing
+spec:
+  selector:
+    matchLabels:
+      app: testing-server
+  template:
+    metadata:
+      labels:
+        app: testing-server
+    spec:
+      containers:
+      - name: testing-server
+        image: anonymous2009/testing-server:v1
+        # imagePullPolicy: Never  # Prevent pulling from a remote registry
+        resources:
+          requests:
+            memory: "256Mi"
+            cpu: "250m"
+          limits:
+            memory: "1024Mi"
+            cpu: "500m"                        
+        ports:
+        - containerPort: 3000

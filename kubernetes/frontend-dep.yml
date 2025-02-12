@@ -1,0 +1,27 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: testing-client-dep
+  namespace: testing
+spec:
+  selector:
+    matchLabels:
+      app: testing-client
+  template:
+    metadata:
+      labels:
+        app: testing-client
+    spec:
+      containers:
+      - name:  testing-client
+        image: anonymous2009/testing-client:v1
+        # imagePullPolicy: Never  # Prevent pulling from a remote registry
+        resources:
+          limits:
+            memory: "128Mi"
+            cpu: "500m"
+          requests:
+            memory: "64Mi"
+            cpu: "250m"  
+        ports:
+        - containerPort: 4173
