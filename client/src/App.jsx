@@ -18,29 +18,29 @@ const App = () => {
   }, [])
   console.log(data)
 
-	const handleClick = () => {
-		setNumber(number + 1)
-	}
+  const handleClick = () => {
+    setNumber(number + 1)
+  }
   return (
-  <>
-    <div>
-      <h1>Hello World!</h1>
-      <ul>
-        {data.map((item, index) => (
-          <li key={index}>{item.name}</li>
-        ))}
-      </ul>
-    </div>
-	<div> 
-	  <p> The counter is : {number}</p>
-	  </div>
-	  <button onClick={handleClick}>
-	Click me to increase the counter :)
-	  </button>
-		<main>
-      this is a main taged para
-		</main>
-</>
+    <>
+      <div>
+        <h1>Hello World!</h1>
+        <ul>
+          {data.map((item, index) => (
+            <li key={index}>{item.name}</li>
+          ))}
+        </ul>
+      </div>
+      <div>
+        <p> The counter is : {number}</p>
+      </div>
+      <button onClick={handleClick}>
+        Click me to increase the counter :)
+      </button>
+      <main>
+        this is a main taged para
+      </main>
+    </>
   )
 }
 
