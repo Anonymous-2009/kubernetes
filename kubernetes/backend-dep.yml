@@ -15,7 +15,7 @@ spec:
       containers:
       - name: testing-server
         image: anonymous2009/testing-server:v1
-        # imagePullPolicy: Never  # Prevent pulling from a remote registry
+        imagePullPolicy: Always  # Prevent pulling from a remote registry
         resources:
           requests:
             memory: "256Mi"

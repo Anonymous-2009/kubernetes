@@ -1,5 +1,5 @@
 # Take a base image of Node
-FROM node:latest
+FROM node:iron-alpine AS builder
 
 # Initialize a working directory
 WORKDIR /home/addifly-server

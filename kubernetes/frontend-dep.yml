@@ -16,6 +16,8 @@ spec:
       - name:  testing-client
         image: anonymous2009/testing-client:v1
         # imagePullPolicy: Never  # Prevent pulling from a remote registry
+        imagePullSecrets:
+          - Always  
         resources:
           limits:
             memory: "128Mi"

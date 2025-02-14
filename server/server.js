@@ -17,6 +17,11 @@ app.get('/', (req, res) => {
   res.send('Hello World!')
 })
 
+app.get('/say', (req, res) => {
+  res.send('docker build is working well in local machine without internet')
+})
+
+
 app.get('/data', cors(), (_req, res) => {
     const data = [{name: 'Alice'}, {name: 'Bob'}, {name: 'Charlie'}, {name: 'David'}, {name: 'Eve'}, {name: 'Frank'}, {name: 'Grace'}, {name: 'Hannah'}, {name: 'Ivan'}, {name: 'Judy'}, {name: 'Kevin'}, {name: 'Linda'}, {name: 'Mallory'}, {name: 'Nancy'}, {name: 'Oscar'}, {name: 'Peggy'}, {name: 'Quentin'}, {name: 'Romeo'}, {name: 'Sue'}, {name: 'Trent'}, {name: 'Ursula'}, {name: 'Victor'}, {name: 'Walter'}, {name: 'Xander'}, {name: 'Yvonne'}, {name: 'Zelda'}]
     res.json(data)

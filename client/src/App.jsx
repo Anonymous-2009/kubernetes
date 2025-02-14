@@ -3,7 +3,9 @@ import axios from 'axios'
 
 const App = () => {
   const [data, setdata] = useState([])
- 
+  const [number, setNumber] = useState(0);
+
+
   useEffect(() => {
     const fetchData = async () => {
       const response = await axios.get('http://localhost:3000/data')
@@ -15,7 +17,12 @@ const App = () => {
     fetchData()
   }, [])
   console.log(data)
+
+	const handleClick = () => {
+		setNumber(number + 1)
+	}
   return (
+  <>
     <div>
       <h1>Hello World!</h1>
       <ul>
@@ -24,6 +31,16 @@ const App = () => {
         ))}
       </ul>
     </div>
+	<div> 
+	  <p> The counter is : {number}</p>
+	  </div>
+	  <button onClick={handleClick}>
+	Click me to increase the counter :)
+	  </button>
+		<main>
+      this is a main taged para
+		</main>
+</>
   )
 }
 
