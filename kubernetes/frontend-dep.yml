@@ -15,9 +15,7 @@ spec:
       containers:
       - name:  testing-client
         image: anonymous2009/testing-client:v1
-        # imagePullPolicy: Never  # Prevent pulling from a remote registry
-        imagePullSecrets:
-          - Always  
+        # imagePullPolicy: Never  # Prevent pulling from a remote registry  
         resources:
           limits:
             memory: "128Mi"
